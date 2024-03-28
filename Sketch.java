@@ -1,18 +1,19 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
-	
+
   /**
-   * Called once at the beginning of execution, put your size all in this method
+   * A program that uses nested loops and draws a bunch of squares
+   * 
+   * @author: Joel Menezes
    */
   public void settings() {
-	  // put your size call here
+    // put your size call here
     size(1200, 600);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
+  /**
+   * Called once at the beginning of execution. Add initial set up
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
@@ -28,7 +29,7 @@ public class Sketch extends PApplet {
     draw_section2();
     draw_section3();
     draw_section4();
-	  
+
     draw_section5();
     draw_section6();
     draw_section7();
@@ -54,7 +55,7 @@ public class Sketch extends PApplet {
     rect(600, 0, 300, 300);
     rect(900, 0, 300, 300);
   }
-  
+
   /**
    * Draws the bottom left section
    */
@@ -64,8 +65,8 @@ public class Sketch extends PApplet {
 
     for (int intRow = 0; intRow < 30; intRow++) {
       for (int intColumn = 0; intColumn < 30; intColumn++) {
-        intX = 3 + 0;  // Instead of zero, calculate the proper intX location using 'intRow'
-        intY = 300 + 3 + 0; // Instead of zero, calculate the proper intY location using 'intColumn'
+        intX = 3 + intRow * 10; // Instead of zero, calculate the proper intX location using 'intRow'
+        intY = 300 + 3 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
 
         fill(255);
         noStroke();
@@ -79,7 +80,22 @@ public class Sketch extends PApplet {
    * Don't loop from 30 to 60 to shift everything over, just add 300 to x.
    */
   public void draw_section2() {
+    int intX = 0;
+    int intY = 0;
 
+    for (int intRow = 0; intRow < 30; intRow++) {
+      for (int intColumn = 0; intColumn < 30; intColumn++) {
+        intX = 3 + intRow * 10 + 300; // Instead of zero, calculate the proper intX location using 'intRow'
+        intY = 300 + 3 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
+        fill(255);
+        if (intRow % 2 == 1) {
+          fill(0);
+        }
+
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    }
   }
 
   /**
@@ -87,33 +103,112 @@ public class Sketch extends PApplet {
    * Don't use multiple 'if' statements.
    */
   public void draw_section3() {
+    int intX = 0;
+    int intY = 0;
 
+    for (int intRow = 0; intRow < 30; intRow++) {
+      for (int intColumn = 0; intColumn < 30; intColumn++) {
+        intX = 3 + intRow * 10 + 600; // Instead of zero, calculate the proper intX location using 'intRow'
+        intY = 300 + 3 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
+
+        fill(0);
+        if (intColumn % 2 == 1) {
+          fill(255);
+        }
+
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    }
   }
 
   /**
    * Use the modulus operator and just one 'if' statement to select the color.
    */
   public void draw_section4() {
+    int intX = 0;
+    int intY = 0;
 
+    for (int intRow = 0; intRow < 30; intRow++) {
+      for (int intColumn = 0; intColumn < 30; intColumn++) {
+        intX = 3 + intRow * 10 + 900; // Instead of zero, calculate the proper intX location using 'intRow'
+        intY = 300 + 3 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
+        fill(0);
+        if (intColumn % 2 == 1 && intRow % 2 == 0) {
+          fill(255);
+        }
+
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    }
   }
 
   /**
    * Do NOT use 'if' statements to complete 5-8. Manipulate the loops instead
    */
   public void draw_section5() {
+    int intX = 0;
+    int intY = 0;
 
+    for (int intRow = 0; intRow < 30; intRow++) {
+      for (int intColumn = 30; intColumn > intRow; intColumn--) {
+        intX = 3 + 290 - intRow * 10; // Instead of zero, calculate the proper intX location using 'intRow'
+        intY = -7 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
+
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    }
   }
 
   public void draw_section6() {
+    int intX = 0;
+    int intY = 0;
 
+    for (int intRow = 0; intRow < 30; intRow++) {
+      for (int intColumn = 30; intColumn > intRow; intColumn--) {
+        intX = 3 + intRow * 10 + 300; // Instead of zero, calculate the proper intX location using 'intRow'
+        intY = -7 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
+
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    }
   }
 
   public void draw_section7() {
+    int intX = 0;
+    int intY = 0;
 
+    for (int intRow = 0; intRow < 31; intRow++) {
+      for (int intColumn = 0; intColumn < intRow; intColumn++) {
+        intX = 3 + 900 - intRow * 10; // Instead of zero, calculate the proper intX location using 'intRow'
+        intY = 3 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
+
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    }
   }
-  
-  public void draw_section8() {
 
+  public void draw_section8() {
+    int intX = 0;
+    int intY = 0;
+
+    for (int intRow = 0; intRow < 31; intRow++) {
+      for (int intColumn = 0; intColumn < intRow; intColumn++) {
+        intX = 3 + intRow * 10 + 890; // Instead of zero, calculate the proper intX location using 'intRow'
+        intY = 3 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
+
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    }
   }
 
 }
