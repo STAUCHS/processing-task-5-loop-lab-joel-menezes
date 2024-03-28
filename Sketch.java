@@ -4,7 +4,6 @@ public class Sketch extends PApplet {
 
   /**
    * A program that uses nested loops and draws a bunch of squares
-   * 
    * @author: Joel Menezes
    */
   public void settings() {
@@ -87,11 +86,10 @@ public class Sketch extends PApplet {
       for (int intColumn = 0; intColumn < 30; intColumn++) {
         intX = 3 + intRow * 10 + 300; // Instead of zero, calculate the proper intX location using 'intRow'
         intY = 300 + 3 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
+        fill(255);
         if (intRow % 2 == 1) {
           fill(0);
-        } else {
-          fill(255);
-        }
+        } 
 
         noStroke();
         rect(intX, intY, 5, 5);
@@ -111,11 +109,11 @@ public class Sketch extends PApplet {
       for (int intColumn = 0; intColumn < 30; intColumn++) {
         intX = 3 + intRow * 10 + 600; // Instead of zero, calculate the proper intX location using 'intRow'
         intY = 300 + 3 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
+        
+        fill(0);
         if (intColumn % 2 == 1) {
           fill(255);
-        } else {
-          fill(0);
-        }
+        } 
 
         noStroke();
         rect(intX, intY, 5, 5);
@@ -134,10 +132,9 @@ public class Sketch extends PApplet {
       for (int intColumn = 0; intColumn < 30; intColumn++) {
         intX = 3 + intRow * 10 + 900; // Instead of zero, calculate the proper intX location using 'intRow'
         intY = 300 + 3 + intColumn * 10; // Instead of zero, calculate the proper intY location using 'intColumn'
+        fill(0);
         if (intColumn % 2 == 1 && intRow % 2 == 0) {
           fill(255);
-        } else {
-          fill(0);
         }
 
         noStroke();
